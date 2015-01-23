@@ -132,28 +132,10 @@ void lcd_menu_startup()
 
     if (led_glow < 84)
     {
-        lcd_lib_draw_gfx(0, 22, ultimakerTextGfx);
-        for(uint8_t n=0;n<10;n++)
-        {
-            if (led_glow*2 >= n + 20)
-                lcd_lib_clear(0, 22+n*2, led_glow*2-n-20, 23+n*2);
-            if (led_glow*2 >= n)
-                lcd_lib_clear(led_glow*2 - n, 22+n*2, 127, 23+n*2);
-            else
-                lcd_lib_clear(0, 22+n*2, 127, 23+n*2);
-        }
-    /*
-    }else if (led_glow < 86) {
-        led_glow--;
-        //lcd_lib_set();
-        //lcd_lib_clear_gfx(0, 22, ultimakerTextGfx);
-        lcd_lib_draw_gfx(0, 22, ultimakerTextGfx);
-    */
+        lcd_lib_draw_gfx(0, 20, chaospottTextGfx);
     }else{
         led_glow--;
-        //lcd_lib_draw_gfx(80, 0, ultimakerRobotGfx);
-        //lcd_lib_clear_gfx(0, 22, ultimakerTextOutlineGfx);
-        lcd_lib_draw_gfx(0, 22, ultimakerTextGfx);
+        lcd_lib_draw_gfx(0, 0, chaospottLogoGfx);
     }
     lcd_lib_update_screen();
 
